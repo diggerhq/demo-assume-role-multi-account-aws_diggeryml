@@ -10,10 +10,10 @@ on:
 
 
 permissions:
-  contents: write      # required to merge PRs
-  id-token: write      # required for workload-identity-federation
-  pull-requests: write # required to post PR comments
-  statuses: write      # required to validate combined PR status
+  contents: write
+  id-token: write
+  pull-requests: write
+  statuses: write
 
 jobs:
   build:
@@ -21,6 +21,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:   
+          aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
+          profile: testaccount
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:   
+          aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
+          profile: stagingaccount
+
       - name: digger run
         uses: diggerhq/digger@fix/error-reporting-swallowing-of-error
         with:
