@@ -9,3 +9,4 @@ resource "aws_instance" "web" {
     Name = "staging acc ec2 instance"
   }
 }
+
