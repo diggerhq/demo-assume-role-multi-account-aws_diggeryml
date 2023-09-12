@@ -25,6 +25,12 @@ jobs:
       - uses: mcblair/configure-aws-profile-action@v0.1.1
         with:
           role-arn: arn:aws:iam::209539466991:role/github-oidc-connect
+          profile-name: default
+          region: us-east-1
+
+      - uses: mcblair/configure-aws-profile-action@v0.1.1
+        with:
+          role-arn: arn:aws:iam::209539466991:role/github-oidc-connect
           profile-name: testaccount
           region: us-east-1
 
@@ -37,9 +43,7 @@ jobs:
       - name: digger run
         uses: diggerhq/digger@fix/error-reporting-swallowing-of-error
         with:
-          setup-aws: true
-          aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
-          aws-region: us-east-1
+          setup-aws: false
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
