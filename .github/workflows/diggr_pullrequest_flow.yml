@@ -1,0 +1,24 @@
+name: Digger PR flow
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    types: [ closed, opened, synchronize, reopened ]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: digger run
+        uses: diggerhq/digger@v0.1.32
+        with:
+          setup-aws: true
+          aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
+          aws-region: us-east-1
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
