@@ -24,13 +24,13 @@ jobs:
 
       - uses: aws-actions/configure-aws-credentials@v4
         with:   
-          aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
+          role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
           profile: testaccount
           aws-region: us-east-1
 
       - uses: aws-actions/configure-aws-credentials@v4
         with:   
-          aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
+          role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
           profile: stagingaccount
           aws-region: us-east-1
 
