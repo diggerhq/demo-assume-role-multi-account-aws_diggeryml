@@ -1,9 +1,9 @@
 
 terraform {
   backend "s3" {
-    bucket = "dias-test-terraform-state"
+    bucket = "digger-tests-terraform-states"
     key    = "oidcs-multi-account/test"
-    region = "us-east-1"
+    region = "us-east-2"
     profile = "testaccount"
   }
 }
