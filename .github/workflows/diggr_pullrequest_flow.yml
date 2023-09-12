@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: digger run
-        uses: diggerhq/digger@v0.1.32
+        uses: diggerhq/digger@v0.1.31
         with:
           setup-aws: true
           aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect
