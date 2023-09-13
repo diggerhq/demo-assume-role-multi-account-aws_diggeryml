@@ -41,7 +41,7 @@ jobs:
           region: us-east-1
 
       - name: digger run
-        uses: diggerhq/digger@fix/error-reporting-swallowing-of-error
+        uses: diggerhq/digger@fix/replace-prints
         with:
           setup-aws: false
         env:
