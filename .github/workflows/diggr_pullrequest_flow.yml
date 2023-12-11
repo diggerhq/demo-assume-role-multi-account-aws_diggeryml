@@ -22,28 +22,12 @@ jobs:
 
     steps:
 
-      - uses: mcblair/configure-aws-profile-action@v0.1.1
-        with:
-          role-arn: arn:aws:iam::209539466991:role/github-oidc-connect
-          profile-name: default
-          region: us-east-1
-
-      - uses: mcblair/configure-aws-profile-action@v0.1.1
-        with:
-          role-arn: arn:aws:iam::209539466991:role/github-oidc-connect
-          profile-name: testaccount
-          region: us-east-1
-
-      - uses: mcblair/configure-aws-profile-action@v0.1.1
-        with:
-          role-arn: arn:aws:iam::682903345738:role/github-oidc-access
-          profile-name: stagingaccount
-          region: us-east-1
-
       - name: digger run
         uses: diggerhq/digger@fix/replace-prints
         with:
-          setup-aws: false
+          setup-aws: true
+          disable-locking: false
         env:
+          AWS_ROLE_TO_ASSUME: arn:aws:iam::209539466991:role/github-oidc-connect
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
