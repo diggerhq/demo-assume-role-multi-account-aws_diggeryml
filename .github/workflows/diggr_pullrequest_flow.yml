@@ -23,11 +23,11 @@ jobs:
     steps:
 
       - name: digger run
-        uses: diggerhq/digger@feat/assume-role-in-projects
+        uses: diggerhq/digger@fix/better-support-for-project-assume-role
         with:
           setup-aws: true
           disable-locking: false
-          aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect # this is the default role, and it would be used for locking
+          # aws-role-to-assume: arn:aws:iam::209539466991:role/github-oidc-connect # this is the default role, and it would be used for locking
           digger-token: ${{ secrets.DIGGER_TOKEN }}
           digger-hostname: "https://cloud.digger.dev"
           digger-organisation: "digger-playground"
