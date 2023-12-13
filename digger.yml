@@ -1,7 +1,11 @@
 projects:
 - name: test
   dir: test-account-resource
-  aws_role_to_assume: arn:aws:iam::209539466991:role/github-oidc-connect
+  aws_role_to_assume: 
+    state: arn:aws:iam::209539466991:role/github-oidc-connect
+    command: arn:aws:iam::209539466991:role/github-oidc-connect
 - name: staging
   dir: staging-account-resource
-  aws_role_to_assume: arn:aws:iam::682903345738:role/github-oidc-access
+  aws_role_to_assume: 
+    state: arn:aws:iam::209539466991:role/github-oidc-connect
+    command: arn:aws:iam::682903345738:role/github-oidc-access
