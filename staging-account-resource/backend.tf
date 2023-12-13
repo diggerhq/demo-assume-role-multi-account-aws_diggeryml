@@ -1,7 +1,7 @@
 
 terraform {
   backend "s3" {
-    bucket = "dias-test-terraform-state"
+    bucket = "digger-tests-terraform-states"
     key    = "oidcs-multi-account-diggeryml/staging"
     region = "us-east-1"
   }
