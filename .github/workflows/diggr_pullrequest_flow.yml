@@ -23,7 +23,7 @@ jobs:
     steps:
 
       - name: digger run
-        uses: diggerhq/digger@fix/state-credentials-oidc-role
+        uses: diggerhq/digger@fix/oidc-multirole-project-apply
         with:
           # setup-aws: true
           disable-locking: true
