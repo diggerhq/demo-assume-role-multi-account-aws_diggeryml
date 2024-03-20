@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: digger run
-        uses: diggerhq/digger@fix-assume-role-orchestrator
+        uses: diggerhq/digger@vtest-assume-role
         with:
           setup-aws: false
           aws-region: us-east-1
