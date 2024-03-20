@@ -25,9 +25,7 @@ jobs:
       - name: digger run
         uses: diggerhq/digger@fix-assume-role-orchestrator
         with:
-          setup-aws: true
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          setup-aws: false
           aws-region: us-east-1
           digger-hostname: 'https://7b1b-5-151-139-93.ngrok-free.app'
           digger-organisation: 'digger'
